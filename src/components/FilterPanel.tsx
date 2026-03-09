@@ -17,15 +17,11 @@ interface Props {
   allYears: number[];
   allSubjects: string[];
   allConcepts: string[];
-  allTags: string[];
   allTypes: string[];
-  selectedCount: number;
-  totalCount: number;
-  onHome: () => void;
 }
 
 export default function FilterPanel({
-  filters, onChange, allYears, allSubjects, allConcepts, allTags, allTypes, selectedCount, totalCount, onHome,
+  filters, onChange, allYears, allSubjects, allConcepts, allTypes,
 }: Props) {
   function toggleSet<T>(arr: T[], val: T): T[] {
     return arr.includes(val) ? arr.filter(v => v !== val) : [...arr, val];
@@ -189,7 +185,6 @@ const TYPE_GROUPS: { label: string; tags: string[] }[] = [
   },
 ];
 
-const ALL_GROUPED = new Set(TYPE_GROUPS.flatMap(g => g.tags));
 
 function TypeGroups({ allTypes, active, onToggle }: {
   allTypes: string[];
@@ -197,7 +192,6 @@ function TypeGroups({ allTypes, active, onToggle }: {
   onToggle: (t: string) => void;
 }) {
   const typeSet = new Set(allTypes);
-  const others = allTypes.filter(t => !ALL_GROUPED.has(t)).sort();
 
   return (
     <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>

@@ -199,11 +199,7 @@ export default function App() {
           allYears={allYears}
           allSubjects={allSubjects}
           allConcepts={allConcepts}
-          allTags={allTags}
           allTypes={allTypes}
-          selectedCount={setIds.size}
-          totalCount={allProblems.length}
-          onHome={() => setPage({ type: 'home' })}
         />
 
         <div style={{ flex: 1, minWidth: 0, display: 'flex', flexDirection: 'column', minHeight: 0 }}>
