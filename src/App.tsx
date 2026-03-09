@@ -55,7 +55,7 @@ export default function App() {
   const [showPreview, setShowPreview] = useState(false);
 
   useEffect(() => {
-    fetch('/problems.json').then(r => r.json()).then(problems => {
+    fetch(`${import.meta.env.BASE_URL}problems.json`).then(r => r.json()).then(problems => {
       setAllProblems(mergeAnnotations(problems));
       setLoading(false);
     });
