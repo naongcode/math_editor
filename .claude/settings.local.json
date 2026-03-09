@@ -1,0 +1,21 @@
+{
+  "permissions": {
+    "allow": [
+      "Read(//c/Users/user/Desktop/project/asset/**)",
+      "Read(//c/Users/user/Desktop/project/**)",
+      "Bash(python -c \":*)",
+      "Bash(where python)",
+      "Bash(where python3)",
+      "Bash(where py)",
+      "Bash(C:/Users/user/AppData/Local/Programs/Python/Python313/python.exe -c \"import fitz; print\\(''pymupdf ok''\\)\")",
+      "Bash(C:/Users/user/AppData/Local/Programs/Python/Python313/python.exe -m pip install pymupdf)",
+      "Bash(C:/Users/user/AppData/Local/Programs/Python/Python313/python.exe -c \":*)",
+      "Bash(C:/Users/user/AppData/Local/Programs/Python/Python313/python.exe extract_problems.py)",
+      "Bash(npm install)",
+      "Bash(npx tsc --noEmit)",
+      "Bash(npm run build)",
+      "Bash(\"C:\\\\Users\\\\user\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python313\\\\python.exe\" extract_problems.py)",
+      "Bash(py -c \":*)"
+    ]
+  }
+}
