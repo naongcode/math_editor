@@ -41,9 +41,10 @@ export default function ProblemCard({
   const displayYear = problem.month === 11 ? problem.year + 1 : problem.year;
   const examLabel = `${displayYear}년 ${MONTH_LABELS[problem.month] ?? problem.month + '월'}`;
   const activeImg = (showSol && problem.solutionImage) ? problem.solutionImage : problem.image;
-  const imgSrc = activeImg ? `/${activeImg}` : null;
+  const base = import.meta.env.BASE_URL;
+  const imgSrc = activeImg ? `${base}${activeImg}` : null;
   const solImgSrcs = showSol && problem.solutionImages && problem.solutionImages.length > 1
-    ? problem.solutionImages.map(s => `/${s}`)
+    ? problem.solutionImages.map(s => `${base}${s}`)
     : null;
 
   return (

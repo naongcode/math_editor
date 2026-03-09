@@ -184,9 +184,10 @@ export default function PrintPreview({ problems, includeSolution, onClose }: Pro
             <div style={{ position: 'absolute', visibility: 'hidden', pointerEvents: 'none', width: PAGE_W - MARGIN * 2 }}>
               {allItems.map(item => {
                 const key = item.isSolution ? `${item.problem.id}_sol_${item.solSegIdx ?? 0}` : item.problem.id;
+                const base = import.meta.env.BASE_URL;
                 const src = item.isSolution
-                  ? (item.solImgSrc ? `/${item.solImgSrc}` : `/${item.problem.solutionImage}`)
-                  : `/${item.problem.image}`;
+                  ? (item.solImgSrc ? `${base}${item.solImgSrc}` : `${base}${item.problem.solutionImage}`)
+                  : `${base}${item.problem.image}`;
                 return (
                   <div key={key} ref={el => { if (el) itemRefs.current.set(key, el); }}>
                     <img src={src} alt="" />
@@ -245,9 +246,10 @@ function A4Page({ children, pageNum, totalPages }: { children: React.ReactNode; 
 
 function ProblemItem({ item }: { item: PageItem }) {
   const p = item.problem;
+  const base = import.meta.env.BASE_URL;
   const src = item.isSolution
-    ? (item.solImgSrc ? `/${item.solImgSrc}` : `/${p.solutionImage}`)
-    : `/${p.image}`;
+    ? (item.solImgSrc ? `${base}${item.solImgSrc}` : `${base}${p.solutionImage}`)
+    : `${base}${p.image}`;
   const showHeader = !item.isSolution || (item.solSegIdx ?? 0) === 0;
   return (
     <div style={{ paddingBottom: 8 }}>
